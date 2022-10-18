@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
     selector: 'login-form',
@@ -12,8 +13,7 @@ export class LoginFormComponent implements OnInit {
     showPassword = false
 
     @Input() thirPartyLogin = true
- 
-    constructor(private formBuilder: UntypedFormBuilder) {}
+    constructor(private formBuilder: UntypedFormBuilder,public auth: AuthService) {}
 
     ngOnInit() {
         this.formGroup = this.formBuilder.group({
@@ -37,4 +37,9 @@ export class LoginFormComponent implements OnInit {
     onReset() {
         this.formGroup.reset();
     }
+
+    loginWithRedirect(): void {
+        this.auth.loginWithRedirect({ screen_hint: 'signup' });
+      }
+    
 }

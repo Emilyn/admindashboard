@@ -13,6 +13,9 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { AppConfigState } from './store/app-config/app-config.state';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from  '../environments/environment';
+
 
 // import mockServer from './mock-data/app.mock';
 
@@ -33,7 +36,10 @@ import { AppComponent } from './app.component';
             AppConfigState
         ]),
         NgxsReduxDevtoolsPluginModule.forRoot(),
-        NgxsLoggerPluginModule.forRoot()
+        NgxsLoggerPluginModule.forRoot(),
+        AuthModule.forRoot({
+            ...env.auth
+        }),
     ],
     providers: [
         {

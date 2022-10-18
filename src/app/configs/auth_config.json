@@ -1,0 +1,6 @@
+{
+    "domain": "dev-8684dz4d.us.auth0.com",
+    "clientId": "HTMYzi8LbB9N2v3n8oxqHAJnCLEc4FOg",
+    "auth0RedirectUri": "http://localhost:4200",
+    "auth0ReturnTo": "http://localhost:4200"
+  }

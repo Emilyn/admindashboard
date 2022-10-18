@@ -2,7 +2,7 @@
 
 </div>
 <form [formGroup]="formGroup" (validSubmit)="login()">
-    <div class="form-group mb-3">
+    <!-- <div class="form-group mb-3">
         <label class="form-label">Username</label>
         <input 
             type="text" 
@@ -29,8 +29,8 @@
             >
             </i>
         </div>
-    </div>
-    <button class="btn btn-primary w-100" type="submit">Log In</button>
+    </div> -->
+    <button class="btn btn-primary w-100" type="submit" (click)="loginWithRedirect()">Log In</button>
 </form>
 <div *ngIf="thirPartyLogin">
     <div class="divider">
@@ -38,17 +38,17 @@
     </div>
     <div class="row">
         <div class="col px-1">
-            <button class="btn btn-outline-secondary w-100">
+            <button class="btn btn-outline-secondary w-100" (click)="loginWithRedirect()">
                 <img src="/assets/images/thumbs/thumb-1.png" alt="" style="max-width: 20px;">
             </button>
         </div>
         <div class="col px-1">
-            <button class="btn btn-outline-secondary w-100">
+            <button class="btn btn-outline-secondary w-100" (click)="loginWithRedirect()">
                 <img src="/assets/images/thumbs/thumb-2.png" alt="" style="max-width: 20px;">
             </button>
         </div>
         <div class="col px-1">
-            <button class="btn btn-outline-secondary w-100">
+            <button class="btn btn-outline-secondary w-100" (click)="loginWithRedirect()">
                 <img src="/assets/images/thumbs/thumb-3.png" alt="" style="max-width: 20px;">
             </button>
         </div>
